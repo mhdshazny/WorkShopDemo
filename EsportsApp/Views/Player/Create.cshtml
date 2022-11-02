@@ -1,0 +1,21 @@
+﻿@model EsportsApp.Models.PlayerModel
+@{
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form asp-action="Create" method="post">
+                <label>Name</label>
+                <input type="text" asp-for="Name"  />
+                <label>Status</label>
+                <input type="text" asp-for="Status"  />
+                <br />
+                <hr />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</div>

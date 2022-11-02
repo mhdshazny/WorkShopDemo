@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EsportsApp.Models.PlayerModel>
+@{
+}
+
+<div class="container-fluid">
+    <h1>Player Table</h1>
+    <hr />
+    <div class="row">
+        <a asp-action="Create" class="btn btn-primary">Create</a>
+        <div class="col">
+            <table class="table bg-primary">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Status</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var player in Model)
+                    {
+                        <tr>
+                            <td>@player.ID</td>
+                            <td>@player.Name</td>
+                            <td>@player.Status</td>
+                            <td>
+                                <a asp-action="Update" asp-route-ID="@player.ID" class="btn btn-secondary">Update</a>
+                                <a asp-action="Delete" asp-route-ID="@player.ID" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
